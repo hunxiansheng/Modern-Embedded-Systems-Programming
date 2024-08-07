@@ -1,0 +1,26 @@
+--cpu=Cortex-M4.fp.sp
+"lesson11_2\startup_stm32f411xe.o"
+"lesson11_2\main.o"
+"lesson11_2\gpio.o"
+"lesson11_2\stm32f4xx_it.o"
+"lesson11_2\stm32f4xx_hal_msp.o"
+"lesson11_2\stm32f4xx_hal_tim.o"
+"lesson11_2\stm32f4xx_hal_tim_ex.o"
+"lesson11_2\stm32f4xx_hal_rcc.o"
+"lesson11_2\stm32f4xx_hal_rcc_ex.o"
+"lesson11_2\stm32f4xx_hal_flash.o"
+"lesson11_2\stm32f4xx_hal_flash_ex.o"
+"lesson11_2\stm32f4xx_hal_flash_ramfunc.o"
+"lesson11_2\stm32f4xx_hal_gpio.o"
+"lesson11_2\stm32f4xx_hal_dma_ex.o"
+"lesson11_2\stm32f4xx_hal_dma.o"
+"lesson11_2\stm32f4xx_hal_pwr.o"
+"lesson11_2\stm32f4xx_hal_pwr_ex.o"
+"lesson11_2\stm32f4xx_hal_cortex.o"
+"lesson11_2\stm32f4xx_hal.o"
+"lesson11_2\stm32f4xx_hal_exti.o"
+"lesson11_2\system_stm32f4xx.o"
+--strict --scatter "lesson11_2\lesson11_2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "lesson11_2.map" -o lesson11_2\lesson11_2.axf

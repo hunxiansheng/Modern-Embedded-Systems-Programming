@@ -1,0 +1,26 @@
+--cpu Cortex-M0
+"lesson13_2\startup_stm32f030x8.o"
+"lesson13_2\main.o"
+"lesson13_2\gpio.o"
+"lesson13_2\stm32f0xx_it.o"
+"lesson13_2\stm32f0xx_hal_msp.o"
+"lesson13_2\stm32f0xx_hal_tim.o"
+"lesson13_2\stm32f0xx_hal_tim_ex.o"
+"lesson13_2\stm32f0xx_hal_rcc.o"
+"lesson13_2\stm32f0xx_hal_rcc_ex.o"
+"lesson13_2\stm32f0xx_hal.o"
+"lesson13_2\stm32f0xx_hal_i2c.o"
+"lesson13_2\stm32f0xx_hal_i2c_ex.o"
+"lesson13_2\stm32f0xx_hal_gpio.o"
+"lesson13_2\stm32f0xx_hal_dma.o"
+"lesson13_2\stm32f0xx_hal_cortex.o"
+"lesson13_2\stm32f0xx_hal_pwr.o"
+"lesson13_2\stm32f0xx_hal_pwr_ex.o"
+"lesson13_2\stm32f0xx_hal_flash.o"
+"lesson13_2\stm32f0xx_hal_flash_ex.o"
+"lesson13_2\stm32f0xx_hal_exti.o"
+"lesson13_2\system_stm32f0xx.o"
+--strict --scatter "lesson13_2\lesson13_2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "lesson13_2.map" -o lesson13_2\lesson13_2.axf

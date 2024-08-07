@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model version="5.2.2" links="1">
+ <documentation>About this example:
+-------------------
+This is a model of a &quot;TimeBomb&quot; presented in lesson #39 of the
+&quot;Modern Embedded Programming&quot; video course. The &quot;TimeBomb&quot; state
+machine is independent from any specific board, but assumes the
+presence of a few LEDs, which are controlled via a BSP (Board
+Support Package)
+
+This example demonstrates:
+- Active object (TimeBomb) with state machine
+- Board Support Package abstraction for portability
+
+Building the example:
+---------------------
+To build this example, you will need the QP/C framework installed on your computer and the KEIL uVision toolset (could be the free edition).
+
+Running the example:
+--------------------
+This example can be run on the TivaC LaunchPad board, but should
+be also easy to port to other boards.
+
+For more QM examples for QP/C see:
+https://www.state-machine.com/qpc/exa.html</documentation>
+ <!--${qpc}-->
+ <framework name="qpc"/>
+ <!--${AOs}-->
+ <package name="AOs" stereotype="0x02">
+  <!--${AOs::TimeBomb}-->
+  <class name="TimeBomb" superclass="qpc::QActive">
+   <!--${AOs::TimeBomb::timeEvt}-->
+   <attribute name="timeEvt" type="QTimeEvt" visibility="0x02" properties="0x00"/>
+   <!--${AOs::TimeBomb::SM}-->
+   <statechart properties="0x01">
+    <!--${AOs::TimeBomb::SM::initial}-->
+    <initial target="../1">
+     <initial_glyph conn="4,4,5,1,28,6,-2">
+      <action box="0,-2,20,4"/>
+     </initial_glyph>
+    </initial>
+    <!--${AOs::TimeBomb::SM::wait4button}-->
+    <state name="wait4button">
+     <entry brief="GreenLED-on;"/>
+     <exit brief="GreenLED-off;"/>
+     <!--${AOs::TimeBomb::SM::wait4button::BUTTON_PRESSED}-->
+     <tran trig="BUTTON_PRESSED" target="../../2">
+      <action brief="blink_ctr=5;"/>
+      <tran_glyph conn="4,15,3,1,28,17,-2">
+       <action box="0,-2,22,7"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="4,6,26,20">
+      <entry box="1,2,17,2"/>
+      <exit box="1,4,19,2"/>
+     </state_glyph>
+    </state>
+    <!--${AOs::TimeBomb::SM::blink}-->
+    <state name="blink">
+     <entry brief="Red-LED=ON,arm-TE-for-1/2sec;"/>
+     <exit brief="Red-LED=OFF;"/>
+     <!--${AOs::TimeBomb::SM::blink::TIMEOUT}-->
+     <tran trig="TIMEOUT" target="../../3">
+      <tran_glyph conn="4,38,3,1,32,12,-6">
+       <action box="0,-2,20,5"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="4,28,26,16">
+      <entry box="1,2,25,3"/>
+      <exit box="1,5,24,2"/>
+     </state_glyph>
+    </state>
+    <!--${AOs::TimeBomb::SM::pause}-->
+    <state name="pause">
+     <entry brief="arm TE for 1/2sec;"/>
+     <!--${AOs::TimeBomb::SM::pause::TIMEOUT}-->
+     <tran trig="TIMEOUT">
+      <action brief="--blink_ctr;"/>
+      <!--${AOs::TimeBomb::SM::pause::TIMEOUT::[blink_ctr>0]}-->
+      <choice target="../../../2">
+       <guard brief="blink_ctr &gt; 0"/>
+       <choice_glyph conn="38,54,4,1,-20,-8">
+        <action box="1,-5,25,4"/>
+       </choice_glyph>
+      </choice>
+      <!--${AOs::TimeBomb::SM::pause::TIMEOUT::[else]}-->
+      <choice target="../../../4">
+       <guard brief="else"/>
+       <choice_glyph conn="38,54,4,1,10,-8">
+        <action box="0,5,16,5"/>
+       </choice_glyph>
+      </choice>
+      <tran_glyph conn="4,54,3,-1,34">
+       <action box="1,-2,20,5"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="4,46,26,14">
+      <entry box="1,2,21,3"/>
+     </state_glyph>
+    </state>
+    <!--${AOs::TimeBomb::SM::boom}-->
+    <state name="boom">
+     <entry brief="all-LEDs=ON;"/>
+     <state_glyph node="4,62,26,10">
+      <entry box="1,2,17,3"/>
+     </state_glyph>
+    </state>
+    <state_diagram size="50,74"/>
+   </statechart>
+  </class>
+ </package>
+</model>
