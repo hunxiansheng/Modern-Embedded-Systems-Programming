@@ -3,10 +3,10 @@ lesson1/system_stm32c0xx.o: ..\Core\Src\system_stm32c0xx.c \
   ..\Drivers\CMSIS\Device\ST\STM32C0xx\Include\stm32c031xx.h \
   ..\Drivers\CMSIS\Include\core_cm0plus.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  C:\Users\hunxi\Documents\GitHub\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\cmsis_version.h \
-  C:\Users\hunxi\Documents\GitHub\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\cmsis_compiler.h \
-  C:\Users\hunxi\Documents\GitHub\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\cmsis_armclang.h \
-  C:\Users\hunxi\Documents\GitHub\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\mpu_armv7.h \
+  C:\Users\hunxi\Desktop\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\cmsis_version.h \
+  C:\Users\hunxi\Desktop\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\cmsis_compiler.h \
+  C:\Users\hunxi\Desktop\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\cmsis_armclang.h \
+  C:\Users\hunxi\Desktop\Modern-Embedded-Systems-Programming\myself\lesson1\lesson1\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\Drivers\CMSIS\Device\ST\STM32C0xx\Include\system_stm32c0xx.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_hal.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_ll_system.h \
