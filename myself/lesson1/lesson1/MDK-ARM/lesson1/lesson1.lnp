@@ -1,0 +1,25 @@
+--cpu Cortex-M0+
+"lesson1\startup_stm32c031xx.o"
+"lesson1\main.o"
+"lesson1\gpio.o"
+"lesson1\stm32c0xx_it.o"
+"lesson1\stm32c0xx_hal_msp.o"
+"lesson1\stm32c0xx_hal.o"
+"lesson1\stm32c0xx_hal_cortex.o"
+"lesson1\stm32c0xx_hal_rcc.o"
+"lesson1\stm32c0xx_hal_rcc_ex.o"
+"lesson1\stm32c0xx_hal_flash.o"
+"lesson1\stm32c0xx_hal_flash_ex.o"
+"lesson1\stm32c0xx_hal_gpio.o"
+"lesson1\stm32c0xx_hal_dma.o"
+"lesson1\stm32c0xx_hal_dma_ex.o"
+"lesson1\stm32c0xx_hal_pwr.o"
+"lesson1\stm32c0xx_hal_pwr_ex.o"
+"lesson1\stm32c0xx_hal_exti.o"
+"lesson1\stm32c0xx_hal_tim.o"
+"lesson1\stm32c0xx_hal_tim_ex.o"
+"lesson1\system_stm32c0xx.o"
+--strict --scatter "lesson1\lesson1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "lesson1.map" -o lesson1\lesson1.axf
