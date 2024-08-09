@@ -11,13 +11,13 @@ int main(void)
 		while(1)
 		{
 			 *((unsigned int *)0x50000018U) = 0x20U; // GPIOA BSRR register led on
-			//delay
+			 //delay
 			  int volatile counter = 0;
         while (counter < 500000) {  // delay loop
             ++counter;
         }
 			 *((unsigned int *)0x50000018U) = 0x200000U; // GPIOA BSRR register led off
-			//delay
+			 //delay
 				counter = 0;
         while (counter < 500000) {  // delay loop
             ++counter;

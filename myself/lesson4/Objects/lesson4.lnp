@@ -1,0 +1,7 @@
+--cpu Cortex-M0+
+".\objects\main.o"
+".\objects\startup_stm32c031xx.o"
+--strict --scatter ".\Objects\lesson4.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\lesson4.map" -o .\Objects\lesson4.axf
