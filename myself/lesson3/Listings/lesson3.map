@@ -254,7 +254,9 @@ Image Symbol Table
     [Anonymous Symbol]                       0x0800013e   Section        0  main.o(.text.SystemInit)
     .text                                    0x0800013e   Section        0  indicate_semi.o(.text)
     [Anonymous Symbol]                       0x08000140   Section        0  main.o(.text.main)
-    __arm_cp.0_0                             0x08000168   Number         4  main.o(.text.main)
+    __arm_cp.0_0                             0x08000170   Number         4  main.o(.text.main)
+    __arm_cp.0_1                             0x08000174   Number         4  main.o(.text.main)
+    __arm_cp.0_2                             0x08000178   Number         4  main.o(.text.main)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000068   Data         512  startup_stm32c031xx.o(HEAP)
     HEAP                                     0x20000068   Section      512  startup_stm32c031xx.o(HEAP)
@@ -363,9 +365,9 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x0800013d   Thumb Code     2  use_no_semi.o(.text)
     SystemInit                               0x0800013f   Thumb Code     2  main.o(.text.SystemInit)
     __semihosting_library_function           0x0800013f   Thumb Code     0  indicate_semi.o(.text)
-    main                                     0x08000141   Thumb Code    40  main.o(.text.main)
-    Region$$Table$$Base                      0x0800016c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800017c   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08000141   Thumb Code    48  main.o(.text.main)
+    Region$$Table$$Base                      0x0800017c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800018c   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000060   Data           0  libspace.o(.bss)
     counter                                  0x20000060   Data           4  main.o(.bss.counter)
@@ -378,9 +380,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000009
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000017c, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000018c, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000017c, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000018c, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -442,17 +444,17 @@ Memory Map of the image
     0x0800013c   0x0800013c   0x00000002   Code   RO          135    .text               c_p.l(use_no_semi.o)
     0x0800013e   0x0800013e   0x00000000   Code   RO          137    .text               c_p.l(indicate_semi.o)
     0x0800013e   0x0800013e   0x00000002   Code   RO            4    .text.SystemInit    main.o
-    0x08000140   0x08000140   0x0000002c   Code   RO            2    .text.main          main.o
-    0x0800016c   0x0800016c   0x00000010   Data   RO          193    Region$$Table       anon$$obj.o
+    0x08000140   0x08000140   0x0000003c   Code   RO            2    .text.main          main.o
+    0x0800017c   0x0800017c   0x00000010   Data   RO          193    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800017c, Size: 0x00000268, Max: 0x00003000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800018c, Size: 0x00000268, Max: 0x00003000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000        -       0x00000060   Zero   RW           57    .bss                c_p.l(libspace.o)
     0x20000060        -       0x00000004   Zero   RW            6    .bss.counter        main.o
-    0x20000064   0x0800017c   0x00000004   PAD
+    0x20000064   0x0800018c   0x00000004   PAD
     0x20000068        -       0x00000200   Zero   RW           15    HEAP                startup_stm32c031xx.o
     0x20000268        -       0x00000000   Zero   RW           14    STACK               startup_stm32c031xx.o
 
@@ -464,11 +466,11 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        46          4          0          0          4        628   main.o
-        40         22          8          0        512        416   startup_stm32c031xx.o
+        62         12          0          0          4        632   main.o
+        40         22          8          0        512        408   startup_stm32c031xx.o
 
     ----------------------------------------------------------------------
-        86         26         24          0        520       1044   Object Totals
+       102         34         24          0        520       1040   Object Totals
          0          0         16          0          0          0   (incl. Generated)
          0          0          0          0          4          0   (incl. Padding)
 
@@ -516,15 +518,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       356         44         24          0        616       1500   Grand Totals
-       356         44         24          0        616       1500   ELF Image Totals
-       356         44         24          0          0          0   ROM Totals
+       372         52         24          0        616       1496   Grand Totals
+       372         52         24          0        616       1496   ELF Image Totals
+       372         52         24          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                  380 (   0.37kB)
+    Total RO  Size (Code + RO Data)                  396 (   0.39kB)
     Total RW  Size (RW Data + ZI Data)               616 (   0.60kB)
-    Total ROM Size (Code + RO Data + RW Data)        380 (   0.37kB)
+    Total ROM Size (Code + RO Data + RW Data)        396 (   0.39kB)
 
 ==============================================================================
 

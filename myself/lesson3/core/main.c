@@ -8,6 +8,8 @@ int main(void)
     {
         ++(*p_int); 
     }
+		p_int = (int *)0x20000062U;
+		*p_int = 0xDEADBEFF;
     return 0;
 }
 
