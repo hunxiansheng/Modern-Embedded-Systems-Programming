@@ -7,23 +7,24 @@
 
   <Targets>
     <Target>
-      <TargetName>Debug</TargetName>
+      <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pArmCC>6210000::V6.21::ARMCLANG</pArmCC>
       <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32C031C6Tx</Device>
+          <Device>STM32C031C6Ux</Device>
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32C0xx_DFP.1.0.0</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00003000) IROM(0x08000000,0x00008000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32C0x_32 -FS08000000 -FL08000 -FP0($$Device:STM32C031C6Tx$CMSIS\Flash\STM32C0x_32.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32C0x_32 -FS08000000 -FL08000 -FP0($$Device:STM32C031C6Ux$CMSIS\Flash\STM32C0x_32.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:STM32C031C6Tx$Drivers\CMSIS\Device\ST\STM32C0xx\Include\stm32c0xx.h</RegisterFile>
+          <RegisterFile>$$Device:STM32C031C6Ux$Drivers\CMSIS\Device\ST\STM32C0xx\Include\stm32c0xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +34,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32C031C6Tx$CMSIS\SVD\STM32C031.svd</SFDFile>
+          <SFDFile>$$Device:STM32C031C6Ux$CMSIS\SVD\STM32C031.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -49,7 +50,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>lesson</OutputName>
+          <OutputName>lesson5</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -314,7 +315,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>0</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -323,11 +324,11 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>2</wLevel>
+            <wLevel>3</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
-            <uGnu>0</uGnu>
+            <uC99>1</uC99>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -337,10 +338,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-Wno-declaration-after-statement</MiscControls>
+              <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\core;.\cmsis</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -382,20 +383,24 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source</GroupName>
+          <GroupName>lesson5</GroupName>
           <Files>
+            <File>
+              <FileName>startup_stm32c031xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\cmsis\startup_stm32c031xx.s</FilePath>
+            </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\core\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32c031xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cmsis\stm32c031xx.h</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
-          <GroupName>::Device</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -403,47 +408,8 @@
 
   <RTE>
     <apis/>
-    <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
-        <targetInfos>
-          <targetInfo name="Debug"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32C0 CMSIS">
-        <package name="STM32C0xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.0.0"/>
-        <targetInfos>
-          <targetInfo name="Debug"/>
-        </targetInfos>
-      </component>
-    </components>
-    <files>
-      <file attr="config" category="source" condition="STM32C031 ARMCC" name="Drivers\CMSIS\Device\ST\STM32C0xx\Source\Templates\arm\startup_stm32c031xx.s" version="1.0.0">
-        <instance index="0">RTE\Device\STM32C031C6Tx\startup_stm32c031xx.s</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32C0 CMSIS"/>
-        <package name="STM32C0xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.0.0"/>
-        <targetInfos>
-          <targetInfo name="Debug"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="source" name="Drivers\CMSIS\Device\ST\STM32C0xx\Source\Templates\system_stm32c0xx.c" version="1.0.0">
-        <instance index="0">RTE\Device\STM32C031C6Tx\system_stm32c0xx.c</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32C0 CMSIS"/>
-        <package name="STM32C0xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.0.0"/>
-        <targetInfos>
-          <targetInfo name="Debug"/>
-        </targetInfos>
-      </file>
-    </files>
+    <components/>
+    <files/>
   </RTE>
-
-  <LayerInfo>
-    <Layers>
-      <Layer>
-        <LayName>lesson</LayName>
-        <LayPrjMark>1</LayPrjMark>
-      </Layer>
-    </Layers>
-  </LayerInfo>
 
 </Project>

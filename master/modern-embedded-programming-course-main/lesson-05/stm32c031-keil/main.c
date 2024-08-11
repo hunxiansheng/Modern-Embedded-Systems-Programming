@@ -12,6 +12,7 @@ int main(void) {
 
     // NUCLEO-C031C6 board has user LED LD4 on GPIOA pin 5
     // set the LED pin as push-pull output, no pull-up, pull-down
+#include "stm32c0xx.h"                  // Device header
     GPIOA_MODER_R   &= ~0xC00U;
     GPIOA_MODER_R   |=  0x400U;
     GPIOA_OTYPER_R  &= ~0x020U;
