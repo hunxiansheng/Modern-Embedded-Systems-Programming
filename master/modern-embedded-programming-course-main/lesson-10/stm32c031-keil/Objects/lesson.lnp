@@ -1,8 +1,8 @@
 --cpu Cortex-M0+
+".\objects\main.o"
+".\objects\delay.o"
 ".\objects\startup_stm32c031xx.o"
 ".\objects\system_stm32c0xx.o"
-".\objects\delay.o"
-".\objects\main.o"
 --strict --scatter ".\Objects\lesson.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

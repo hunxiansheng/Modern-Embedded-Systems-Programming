@@ -53,7 +53,7 @@ int main(void) {
 unsigned fact(unsigned n) {
 // 0! = 1
 // n! = n*(n-1)!  for n > 0
-    unsigned foo[6];
+    unsigned foo[100];
     foo[n] = n;
 
     if (n == 0U) {

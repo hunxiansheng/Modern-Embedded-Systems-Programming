@@ -1,1 +1,2 @@
-./objects/delay.o: delay.c delay.h
+.\objects\delay.o: user\delay.c
+.\objects\delay.o: user\delay.h

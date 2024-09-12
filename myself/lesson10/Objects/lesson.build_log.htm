@@ -9,12 +9,12 @@ License Information: yan sheyang, xinzhifang, LIC=32B1Q-NAHET-HL6CL-0RDSE-57IGZ-
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
-Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.21
-Assembler:       Armasm.exe V6.21
-Linker/Locator:  ArmLink.exe V6.21
-Library Manager: ArmAr.exe V6.21
-Hex Converter:   FromElf.exe V6.21
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.39.0.0
 Dialog DLL:      DARMCM1.DLL V1.19.6.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
@@ -22,51 +22,31 @@ Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
 C:\Users\hunxi\Desktop\Modern-Embedded-Systems-Programming\myself\lesson10\lesson.uvprojx
-Project File Date:  09/10/2024
+Project File Date:  09/12/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Debug'
-Validate Run Time Environment: errors/warnings detected:
-'Keil::Device:Startup@1.0.0': warning #515: Additional software components required
- require Device:STM32Cube Framework: Select component from list
-    'Keil::Device:STM32Cube Framework:STM32CubeMX'
-compiling delay.c...
-compiling main.c...
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
 assembling startup_stm32c031xx.s...
+compiling delay.c...
 compiling system_stm32c0xx.c...
+compiling main.c...
 linking...
-Program Size: Code=608 RO-data=208 RW-data=0 ZI-data=1632  
+Program Size: Code=468 RO-data=208 RW-data=0 ZI-data=1632  
 ".\Objects\lesson.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
-
-Package Vendor: ARM
-                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
-                ARM::CMSIS@6.0.0
-                CMSIS (Common Microcontroller Software Interface Standard)
-   * Component: CORE Version: 6.0.0
 
 Package Vendor: Keil
                 https://www.keil.com/pack/Keil.STM32C0xx_DFP.1.0.0.pack
                 Keil::STM32C0xx_DFP@1.0.0
                 STMicroelectronics STM32C0 Series Device Support
-   * Component: Startup Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
-  ./RTE/_Debug
-  C:/Users/hunxi/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
   C:/Users/hunxi/AppData/Local/Arm/Packs/Keil/STM32C0xx_DFP/1.0.0/Drivers/CMSIS/Device/ST/STM32C0xx/Include
 
 <h2>Collection of Component Files used:</h2>
-
-   * Component: ARM::CMSIS:CORE@6.0.0
-
-   * Component: Keil::Device:Startup@1.0.0
-      Source file:   Drivers/CMSIS/Device/ST/STM32C0xx/Source/Templates/arm/startup_stm32c031xx.s
-      Source file:   Drivers/CMSIS/Device/ST/STM32C0xx/Source/Templates/system_stm32c0xx.c
-      Include file:  Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c0xx.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
